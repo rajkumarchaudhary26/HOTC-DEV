@@ -6,8 +6,7 @@ from .models import News
 from versatileimagefield.image_warmer import VersatileImageFieldWarmer
 
 @receiver(models.signals.post_save, sender=News)
-def warm_header_images(sender, instance, **kwargs):
-    # Ensures Person head shots are created post-save
+def warm_Person_headshot_images(sender, instance, **kwargs):
     person_img_warmer = VersatileImageFieldWarmer(
         instance_or_queryset=instance,
         rendition_key_set='news_headers',

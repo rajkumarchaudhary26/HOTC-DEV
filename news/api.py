@@ -1,15 +1,18 @@
-from rest_framework.viewsets import GenericViewSet
-from rest_framework.mixins import ListModelMixin, RetrieveModelMixin
+from rest_framework.generics import ListAPIView, RetrieveAPIView
+from rest_framework.viewsets import ModelViewSet
 from .serializers import NewsListSerializer, NewsDetailSerializer
+from rest_framework.filters import SearchFilter
 
 from .models import News
 
-class NewsView(GenericViewSet, ListModelMixin, RetrieveModelMixin):
+
+class NewsViewset(ModelViewSet):
     queryset = News.objects.all()
+    serializer_class = NewsListSerializer
+    filter_backends = (SearchFilter,)
+    search_fields = ('title', 'content')
+    http_method_names = ['get']
     lookup_field = 'slug'
+
+
     
-    def get_serializer_class(self):
-        if self.action == 'list':
-            return NewsListSerializer
-        if self.action == 'retrieve':
-            return NewsDetailSerializer
