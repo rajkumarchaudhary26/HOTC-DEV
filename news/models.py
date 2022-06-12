@@ -23,3 +23,6 @@ class News(models.Model):
         if not self.excerpt:
             self.excerpt = get_excerpt(self.content)
         super().save(*args, **kwargs)
+
+    class Meta:
+        verbose_name_plural = 'News'

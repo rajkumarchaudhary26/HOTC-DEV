@@ -7,7 +7,7 @@ class NoticeListSerializer(ModelSerializer):
     url = notice_detail_url
     class Meta:
         model = Notice
-        fields = ('url', 'title', 'updated_at',)
+        fields = ('url', 'title', 'excerpt', 'updated_at',)
 
 class NoticeDetailSerializer(ModelSerializer):
     class Meta:

@@ -8,16 +8,16 @@ news_detail_url = HyperlinkedIdentityField(view_name='news-detail', lookup_field
 
 
 class NewsListSerializer(ModelSerializer):
-    header_image = VersatileImageFieldSerializer(sizes='news_headers')
-    url = news_detail_url    
+    header_image = VersatileImageFieldSerializer(sizes='sizes')
+    url = news_detail_url
 
     class Meta:
         model = News
-        fields = ['url', 'title', 'updated_at', 'header_image']
+        fields = ['url', 'title', 'excerpt', 'updated_at', 'header_image']
 
 
 class NewsDetailSerializer(ModelSerializer):
-    header_image = VersatileImageFieldSerializer(sizes='news_headers')
+    header_image = VersatileImageFieldSerializer(sizes='sizes')
 
     class Meta:
         model = News

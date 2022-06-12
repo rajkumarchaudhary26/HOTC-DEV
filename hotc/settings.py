@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'news',
     'syllabus',
     'notice',
+    'gallery',
 ]
 
 MIDDLEWARE = [
@@ -148,7 +149,7 @@ VERSATILEIMAGEFIELD_SETTINGS = {
 }
 
 VERSATILEIMAGEFIELD_RENDITION_KEY_SETS = {
-    'news_headers': [
+    'sizes': [
         ('detail', 'crop__1291x967'),
         ('list', 'crop__382x254'),
     ]
