@@ -1,20 +1,17 @@
 from django.db import models
-from versatileimagefield.fields import VersatileImageField, PPOIField
+
 from ckeditor.fields import RichTextField
 
-class News(models.Model):
+class Syllabus(models.Model):
     title = models.CharField(max_length=255, db_index=True)
     slug = models.SlugField(max_length=255)
-    header_image = VersatileImageField('News Header', upload_to='images/news_headers/', ppoi_field='ppoi')
-    ppoi = PPOIField('News Header PPOI')
     content = RichTextField()
-    # excerpt = models.TextField(blank=True)
+    file = models.FileField()
     created_at = models.DateTimeField(auto_now_add=True, db_index=True)
     updated_at = models.DateTimeField(auto_now=True)
-    is_published = models.BooleanField(default=True)
 
     def __str__(self):
         return self.title
     
     class Meta:
-        verbose_name_plural = 'News'
+        verbose_name_plural = 'Syllabuses'

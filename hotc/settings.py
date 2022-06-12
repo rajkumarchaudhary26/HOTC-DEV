@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'versatileimagefield',
 
     'news',
+    'syllabus',
 ]
 
 MIDDLEWARE = [

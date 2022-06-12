@@ -9,8 +9,7 @@ news_detail_url = HyperlinkedIdentityField(view_name='news-detail', lookup_field
 
 class NewsListSerializer(ModelSerializer):
     header_image = VersatileImageFieldSerializer(sizes='news_headers')
-    url = news_detail_url
-    
+    url = news_detail_url    
 
     class Meta:
         model = News
