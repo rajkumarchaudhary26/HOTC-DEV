@@ -8,6 +8,8 @@ class Gallery(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        verbose_name_plural = 'Galleries'
 
 class Image(models.Model):
     image = models.ImageField(upload_to='images/images/')

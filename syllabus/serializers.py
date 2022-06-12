@@ -7,7 +7,7 @@ class SyllabusListSerializer(ModelSerializer):
     url = syllabus_detail_url
     class Meta:
         model = Syllabus
-        fields = ('url', 'title', 'excerpt', 'updated_at',)
+        fields = ('url', 'title', 'slug', 'excerpt', 'updated_at',)
 
 class SyllabusDetailSerializer(ModelSerializer):
     class Meta:

@@ -13,7 +13,7 @@ class NewsListSerializer(ModelSerializer):
 
     class Meta:
         model = News
-        fields = ['url', 'title', 'excerpt', 'updated_at', 'header_image']
+        fields = ['url', 'slug', 'title', 'excerpt', 'updated_at', 'header_image']
 
 
 class NewsDetailSerializer(ModelSerializer):
