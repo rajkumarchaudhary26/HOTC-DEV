@@ -1,3 +1,5 @@
+from versatileimagefield.fields import VersatileImageField, PPOIField
+
 from django.db import models
 
 
@@ -12,5 +14,6 @@ class Gallery(models.Model):
         verbose_name_plural = 'Galleries'
 
 class Image(models.Model):
-    image = models.ImageField(upload_to='images/images/')
+    image = VersatileImageField(upload_to='images/gallery/', ppoi_field='ppoi')
+    ppoi = PPOIField('Gallery PPOI')
     gallery = models.ForeignKey(Gallery, on_delete=models.CASCADE, related_name='images')

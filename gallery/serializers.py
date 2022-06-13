@@ -9,13 +9,13 @@ from versatileimagefield.serializers import VersatileImageFieldSerializer
 gallery_detail_url = HyperlinkedIdentityField(view_name='gallery-detail', lookup_field='slug')
 
 class ImageSerializer(serializers.ModelSerializer):
+    image = VersatileImageFieldSerializer(sizes='sizes')
     class Meta:
         model = Image
         fields = ('image',)
 
 
 class GalleryListSerializer(serializers.ModelSerializer):
-    images = VersatileImageFieldSerializer(sizes='sizes')
     images = ImageSerializer(many=True)
     url = gallery_detail_url
 
@@ -25,7 +25,6 @@ class GalleryListSerializer(serializers.ModelSerializer):
 
     
 class GalleryDetailSerializer(serializers.ModelSerializer):
-    images = VersatileImageFieldSerializer(sizes='sizes')
     images = ImageSerializer(many=True)
     class Meta:
         model = Gallery

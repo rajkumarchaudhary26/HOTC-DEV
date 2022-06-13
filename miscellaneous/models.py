@@ -1,5 +1,6 @@
-from django.db import models
+from versatileimagefield.fields import VersatileImageField, PPOIField
 
+from django.db import models
 
 # Model that holds record for Transplant acts and legislations
 class Miscellaneous(models.Model):
@@ -15,5 +16,6 @@ class Miscellaneous(models.Model):
         verbose_name_plural = 'Miscellaneous'
 
 class MiscellaneousImage(models.Model):
-    image = models.ImageField(upload_to='images/miscellaneous/')
+    image = VersatileImageField(upload_to='images/miscellaneous/', ppoi_field='ppoi')
+    ppoi = PPOIField('Miscellaneous Images PPOI')
     miscellaneous = models.ForeignKey(Miscellaneous, on_delete=models.CASCADE, related_name='images')
