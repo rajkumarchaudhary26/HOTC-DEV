@@ -7,12 +7,14 @@ from news.api import NewsViewset
 from syllabus.api import SyllabusViewSet
 from notice.api import NoticeViewSet
 from gallery.api import GalleryViewSet
+from event.api import EventViewSet
 
 router = DefaultRouter()
 router.register('news', NewsViewset, basename='news')
 router.register('syllabus', SyllabusViewSet, basename='syllabus')
 router.register('notice', NoticeViewSet, basename='notice')
 router.register('gallery', GalleryViewSet, basename='gallery')
+router.register('event', EventViewSet, basename='event')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

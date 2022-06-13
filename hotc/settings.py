@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'syllabus',
     'notice',
     'gallery',
+    'event',
 ]
 
 MIDDLEWARE = [
