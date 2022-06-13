@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'notice',
     'gallery',
     'event',
+    'miscellaneous',
 ]
 
 MIDDLEWARE = [

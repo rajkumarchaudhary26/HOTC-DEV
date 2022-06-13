@@ -1,5 +1,6 @@
 from rest_framework import viewsets
 from rest_framework.filters import SearchFilter
+from rest_framework.generics import ListAPIView
 
 from .models import Notice
 from .serializers import NoticeDetailSerializer, NoticeListSerializer
@@ -16,3 +17,9 @@ class NoticeViewSet(viewsets.ModelViewSet):
             return NoticeListSerializer
         if self.action == 'retrieve':
             return NoticeDetailSerializer
+    
+class LatestNotice(ListAPIView):
+    serializer_class = NoticeListSerializer
+    
+    def get_queryset(self):
+        return Notice.objects.filter().order_by('-created_at')[:3]

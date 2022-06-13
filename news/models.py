@@ -1,4 +1,5 @@
 from django.db import models
+
 from versatileimagefield.fields import VersatileImageField, PPOIField
 from ckeditor.fields import RichTextField
 

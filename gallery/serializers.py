@@ -16,8 +16,8 @@ class ImageSerializer(serializers.ModelSerializer):
 
 class GalleryListSerializer(serializers.ModelSerializer):
     images = VersatileImageFieldSerializer(sizes='sizes')
-    url = gallery_detail_url
     images = ImageSerializer(many=True)
+    url = gallery_detail_url
 
     class Meta:
         model = Gallery
