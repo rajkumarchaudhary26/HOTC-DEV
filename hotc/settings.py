@@ -50,6 +50,11 @@ INSTALLED_APPS = [
     'gallery',
     'event',
     'miscellaneous',
+    'download',
+    'about',
+    'board_members',
+    'organization_structure',
+    'contact',
 ]
 
 MIDDLEWARE = [
@@ -154,6 +159,7 @@ VERSATILEIMAGEFIELD_RENDITION_KEY_SETS = {
     'sizes': [
         ('detail', 'crop__1291x967'),
         ('list', 'crop__382x254'),
+        ('square', 'crop__200x200'),
     ]
 }
 

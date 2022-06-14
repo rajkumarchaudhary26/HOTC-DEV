@@ -13,3 +13,4 @@ def warm_Person_headshot_images(sender, instance, **kwargs):
         image_attr='image'
     )
     num_created, failed_to_create = person_img_warmer.warm()
+    print('#######################################')

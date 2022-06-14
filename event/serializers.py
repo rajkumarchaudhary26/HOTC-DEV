@@ -9,7 +9,9 @@ from versatileimagefield.serializers import VersatileImageFieldSerializer
 event_detail_url = HyperlinkedIdentityField(view_name='event-detail', lookup_field='slug')
 
 class EventListSerializer(ModelSerializer):
-    image = VersatileImageFieldSerializer(sizes='sizes')
+    image = VersatileImageFieldSerializer(sizes=[
+        ('list', 'crop__382x254'),
+    ])
     url = event_detail_url
     class Meta:
         model = Event
@@ -17,7 +19,9 @@ class EventListSerializer(ModelSerializer):
 
 
 class EventDetailSerializer(ModelSerializer):
-    image = VersatileImageFieldSerializer(sizes='sizes')
+    image = VersatileImageFieldSerializer(sizes=[
+        ('detail', 'crop__1291x967'),
+    ])
     class Meta:
         model = Event
         fields = ('id', 'title', 'image', 'content', 'starts_at', 'ends_at', 'venue', 'phone', 'email', 'website', 'updated_at',)

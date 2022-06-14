@@ -9,7 +9,11 @@ from notice.api import NoticeViewSet, LatestNotice
 from gallery.api import GalleryViewSet
 from event.api import EventViewSet
 from miscellaneous.api import MiscellaneousViewSet
-
+from download.api import DownloadViewSet
+from about.api import AboutViewSet
+from board_members.api import BoardMembersViewSet
+from organization_structure.api import OrganizationStructureViewSet
+from contact.api import ContactViewSet
 
 router = DefaultRouter()
 router.register('news', NewsViewset, basename='news')
@@ -18,6 +22,11 @@ router.register('notice', NoticeViewSet, basename='notice')
 router.register('gallery', GalleryViewSet, basename='gallery')
 router.register('event', EventViewSet, basename='event')
 router.register('miscellaneous', MiscellaneousViewSet, basename='miscellaneous')
+router.register('download', DownloadViewSet, basename='download')
+router.register('about', AboutViewSet, basename='about')
+router.register('board-members', BoardMembersViewSet, basename='board-members')
+router.register('organization-structure', OrganizationStructureViewSet, basename='organization-structure')
+router.register('contact', ContactViewSet, basename='contact')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

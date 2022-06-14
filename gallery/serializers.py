@@ -1,3 +1,4 @@
+from email.mime import image
 from rest_framework import serializers
 from rest_framework.serializers import HyperlinkedIdentityField
 
@@ -8,15 +9,25 @@ from versatileimagefield.serializers import VersatileImageFieldSerializer
 
 gallery_detail_url = HyperlinkedIdentityField(view_name='gallery-detail', lookup_field='slug')
 
-class ImageSerializer(serializers.ModelSerializer):
-    image = VersatileImageFieldSerializer(sizes='sizes')
+class ListImageSerializer(serializers.ModelSerializer):
+    image = VersatileImageFieldSerializer(sizes=[
+        ('list', 'crop__382x254'),
+    ])
     class Meta:
         model = Image
-        fields = ('image',)
+        fields = ('id', 'image',)
+
+class DetailImageSerializer(serializers.ModelSerializer):
+    image = VersatileImageFieldSerializer(sizes=[
+        ('detail', 'crop__1291x967'),
+    ])
+    class Meta:
+        model = Image
+        fields = ('id', 'image',)
 
 
 class GalleryListSerializer(serializers.ModelSerializer):
-    images = ImageSerializer(many=True)
+    images = ListImageSerializer(many=True)
     url = gallery_detail_url
 
     class Meta:
@@ -25,7 +36,7 @@ class GalleryListSerializer(serializers.ModelSerializer):
 
     
 class GalleryDetailSerializer(serializers.ModelSerializer):
-    images = ImageSerializer(many=True)
+    images = DetailImageSerializer(many=True)
     class Meta:
         model = Gallery
         fields = ('images',)

@@ -8,7 +8,9 @@ news_detail_url = HyperlinkedIdentityField(view_name='news-detail', lookup_field
 
 
 class NewsListSerializer(ModelSerializer):
-    header_image = VersatileImageFieldSerializer(sizes='sizes')
+    header_image = VersatileImageFieldSerializer(sizes=[
+        ('list', 'crop__382x254'),
+    ])
     url = news_detail_url
 
     class Meta:
@@ -17,7 +19,9 @@ class NewsListSerializer(ModelSerializer):
 
 
 class NewsDetailSerializer(ModelSerializer):
-    header_image = VersatileImageFieldSerializer(sizes='sizes')
+    header_image = VersatileImageFieldSerializer(sizes=[
+        ('detail', 'crop__1291x967'),
+    ])
 
     class Meta:
         model = News

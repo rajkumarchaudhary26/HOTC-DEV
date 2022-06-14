@@ -8,8 +8,19 @@ miscellaneous_detail_url = HyperlinkedIdentityField(
     view_name='miscellaneous-detail', lookup_field='slug')
 
 
-class MiscellaneousImageSerializer(ModelSerializer):
-    image = VersatileImageFieldSerializer(sizes='sizes')
+class ListMiscellaneousImageSerializer(ModelSerializer):
+    image = VersatileImageFieldSerializer(sizes=[
+        ('list', 'crop__382x254'),
+    ])
+
+    class Meta:
+        model = MiscellaneousImage
+        fields = ('id', 'image',)
+    
+class DetailMiscellaneousImageSerializer(ModelSerializer):
+    image = VersatileImageFieldSerializer(sizes=[
+        ('detail', 'crop__1291x967'),
+    ])
 
     class Meta:
         model = MiscellaneousImage
@@ -26,7 +37,7 @@ class MiscellaneousListSerializer(ModelSerializer):
 
 class MiscellaneousDetailSerializer(ModelSerializer):
     # import ipdb; ipdb.set_trace()
-    images = MiscellaneousImageSerializer(many=True, read_only=True)
+    images = DetailMiscellaneousImageSerializer(many=True)
 
     class Meta:
         model = Miscellaneous
