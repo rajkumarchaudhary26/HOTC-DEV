@@ -3,6 +3,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework.routers import DefaultRouter
+from home.api import HomeViewSet
 from news.api import NewsViewset
 from syllabus.api import SyllabusViewSet
 from notice.api import NoticeViewSet, LatestNotice
@@ -14,6 +15,7 @@ from about.api import AboutViewSet
 from board_members.api import BoardMembersViewSet
 from organization_structure.api import OrganizationStructureViewSet
 from contact.api import ContactViewSet
+from home.api import HomeViewSet
 
 router = DefaultRouter()
 router.register('news', NewsViewset, basename='news')
@@ -27,6 +29,7 @@ router.register('about', AboutViewSet, basename='about')
 router.register('board-members', BoardMembersViewSet, basename='board-members')
 router.register('organization-structure', OrganizationStructureViewSet, basename='organization-structure')
 router.register('contact', ContactViewSet, basename='contact')
+router.register('home', HomeViewSet, basename='home')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

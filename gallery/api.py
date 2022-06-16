@@ -4,7 +4,7 @@ from .models import Gallery
 from .serializers import GalleryListSerializer, GalleryDetailSerializer
 
 class GalleryViewSet(viewsets.ModelViewSet):
-    queryset = Gallery.objects.all()
+    queryset = Gallery.objects.all().select_related('home')
     http_method_names = ['get']
     lookup_field = 'slug'
 

@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'versatileimagefield',
 
+    'home',
     'news',
     'syllabus',
     'notice',

@@ -11,5 +11,5 @@ class ImageInline(admin.TabularInline):
 @admin.register(Gallery)
 class GalleryAdmin(admin.ModelAdmin):
     inlines = [ImageInline]
-    list_display = ['title']
+    list_display = ('title',)
     prepopulated_fields = {'slug': ('title',)}
