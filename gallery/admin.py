@@ -13,3 +13,7 @@ class GalleryAdmin(admin.ModelAdmin):
     inlines = [ImageInline]
     list_display = ('title',)
     prepopulated_fields = {'slug': ('title',)}
+
+@admin.register(Image)
+class ImageAdmin(admin.ModelAdmin):
+    list_display = ('image',)

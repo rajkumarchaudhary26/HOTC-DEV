@@ -16,7 +16,8 @@ class Gallery(models.Model):
         return self.title
 
     class Meta:
-        verbose_name_plural = 'Galleries'
+        verbose_name_plural = 'Galleries'       
+
 
 class Image(models.Model):
     image = VersatileImageField(upload_to='images/gallery/', ppoi_field='ppoi')

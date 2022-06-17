@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 
 from .models import Gallery
-from .serializers import GalleryListSerializer, GalleryDetailSerializer
+from .serializers import GallerySerializer, GalleryDetailSerializer
 
 class GalleryViewSet(viewsets.ModelViewSet):
     queryset = Gallery.objects.all().select_related('home')
@@ -10,6 +10,6 @@ class GalleryViewSet(viewsets.ModelViewSet):
 
     def get_serializer_class(self):
         if self.action == 'list':
-            return GalleryListSerializer
+            return GallerySerializer
         if self.action == 'retrieve':
             return GalleryDetailSerializer
