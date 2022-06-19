@@ -10,7 +10,7 @@ miscellaneous_detail_url = HyperlinkedIdentityField(
 
 class ListMiscellaneousImageSerializer(ModelSerializer):
     image = VersatileImageFieldSerializer(sizes=[
-        ('list', 'crop__382x254'),
+        ('list', 'thumbnail__382x254'),
     ])
 
     class Meta:
@@ -19,7 +19,7 @@ class ListMiscellaneousImageSerializer(ModelSerializer):
     
 class DetailMiscellaneousImageSerializer(ModelSerializer):
     image = VersatileImageFieldSerializer(sizes=[
-        ('detail', 'crop__1291x967'),
+        ('detail', 'thumbnail__1291x967'),
     ])
 
     class Meta:

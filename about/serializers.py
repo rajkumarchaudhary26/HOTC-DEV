@@ -7,7 +7,7 @@ from versatileimagefield.serializers import VersatileImageFieldSerializer
 
 class AboutSerializer(serializers.ModelSerializer):
     image = VersatileImageFieldSerializer(sizes=[
-        ('detail', 'crop__1291x967'),
+        ('detail', 'thumbnail__1291x967'),
     ])
     class Meta:
         model = About

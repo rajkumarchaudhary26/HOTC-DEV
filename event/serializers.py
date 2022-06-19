@@ -10,7 +10,7 @@ event_detail_url = HyperlinkedIdentityField(view_name='event-detail', lookup_fie
 
 class EventListSerializer(ModelSerializer):
     image = VersatileImageFieldSerializer(sizes=[
-        ('list', 'crop__382x254'),
+        ('list', 'thumbnail__382x254'),
     ])
     url = event_detail_url
     class Meta:
@@ -20,7 +20,7 @@ class EventListSerializer(ModelSerializer):
 
 class EventDetailSerializer(ModelSerializer):
     image = VersatileImageFieldSerializer(sizes=[
-        ('detail', 'crop__1291x967'),
+        ('detail', 'thumbnail__1291x967'),
     ])
     class Meta:
         model = Event

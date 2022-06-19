@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'board_members',
     'organization_structure',
     'contact',
+    'testimonial',
 ]
 
 MIDDLEWARE = [
@@ -154,12 +155,13 @@ VERSATILEIMAGEFIELD_SETTINGS = {
     'filtered_directory_name': '__filtered__',
     'placeholder_directory_name': '__placeholder__',
     'create_images_on_demand': False,
+    'jpeg_resize_quality': 95,
 }
 
 VERSATILEIMAGEFIELD_RENDITION_KEY_SETS = {
     'sizes': [
-        ('detail', 'crop__1291x967'),
-        ('list', 'crop__382x254'),
+        ('detail', 'thumbnail__1291x967'),
+        ('list', 'thumbnail__382x254'),
         ('square', 'crop__200x200'),
     ]
 }

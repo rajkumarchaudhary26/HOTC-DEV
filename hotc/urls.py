@@ -16,6 +16,7 @@ from board_members.api import BoardMembersViewSet
 from organization_structure.api import OrganizationStructureViewSet
 from contact.api import ContactViewSet
 from home.api import HomeViewSet
+from testimonial.api import TestimonialViewSet
 
 router = DefaultRouter()
 router.register('news', NewsViewset, basename='news')
@@ -30,6 +31,7 @@ router.register('board-members', BoardMembersViewSet, basename='board-members')
 router.register('organization-structure', OrganizationStructureViewSet, basename='organization-structure')
 router.register('contact', ContactViewSet, basename='contact')
 router.register('home', HomeViewSet, basename='home')
+router.register('testimonial', TestimonialViewSet, basename='testimonial')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

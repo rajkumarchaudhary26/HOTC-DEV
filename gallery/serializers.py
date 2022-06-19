@@ -13,7 +13,7 @@ gallery_detail_url = HyperlinkedIdentityField(view_name='gallery-detail', lookup
 class GallerySerializer(serializers.ModelSerializer):
     url = gallery_detail_url
     featured_image = VersatileImageFieldSerializer(sizes=[
-        ('list', 'crop__382x254'),
+        ('list', 'thumbnail__382x254'),
     ])
     class Meta:
         model = Gallery
@@ -22,7 +22,7 @@ class GallerySerializer(serializers.ModelSerializer):
 
 class ImageSerializer(serializers.ModelSerializer):
     image = VersatileImageFieldSerializer(sizes=[
-        ('detail', 'crop__1291x967'),
+        ('detail', 'thumbnail__1291x967'),
     ])
     class Meta:
         model = Image
