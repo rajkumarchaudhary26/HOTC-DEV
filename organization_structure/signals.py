@@ -5,6 +5,7 @@ from .models import OrganizationStructure
 
 from versatileimagefield.image_warmer import VersatileImageFieldWarmer
 
+
 @receiver(models.signals.post_save, sender=OrganizationStructure)
 def warm_Person_headshot_images(sender, instance, **kwargs):
     person_img_warmer = VersatileImageFieldWarmer(

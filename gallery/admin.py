@@ -14,6 +14,7 @@ class GalleryAdmin(admin.ModelAdmin):
     list_display = ('title',)
     prepopulated_fields = {'slug': ('title',)}
 
+
 @admin.register(Image)
 class ImageAdmin(admin.ModelAdmin):
     list_display = ('image',)

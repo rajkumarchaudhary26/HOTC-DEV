@@ -17,6 +17,7 @@ class ListMiscellaneousImageSerializer(ModelSerializer):
         model = MiscellaneousImage
         fields = ('id', 'image',)
     
+
 class DetailMiscellaneousImageSerializer(ModelSerializer):
     image = VersatileImageFieldSerializer(sizes=[
         ('detail', 'thumbnail__1291x967'),

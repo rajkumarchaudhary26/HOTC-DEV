@@ -15,6 +15,7 @@ def warm_Person_headshot_images(sender, instance, **kwargs):
     )
     num_created, failed_to_create = person_img_warmer.warm()
 
+
 @receiver(models.signals.post_save, sender=Image)
 def warm_Person_headshot_images(sender, instance, **kwargs):
     person_img_warmer = VersatileImageFieldWarmer(

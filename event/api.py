@@ -4,6 +4,7 @@ from rest_framework.filters import SearchFilter
 from .models import Event
 from .serializers import EventListSerializer, EventDetailSerializer
 
+
 class EventViewSet(viewsets.ModelViewSet):
     queryset = Event.objects.all()
     filter_backends = (SearchFilter,)
@@ -14,6 +15,6 @@ class EventViewSet(viewsets.ModelViewSet):
     def get_serializer_class(self):
         if self.action == 'list':
             return EventListSerializer
-    
+
         if self.action == 'retrieve':
             return EventDetailSerializer

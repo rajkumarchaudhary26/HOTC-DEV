@@ -6,13 +6,16 @@ from .models import Event
 # Third-party packages
 from versatileimagefield.serializers import VersatileImageFieldSerializer
 
-event_detail_url = HyperlinkedIdentityField(view_name='event-detail', lookup_field='slug')
+event_detail_url = HyperlinkedIdentityField(
+    view_name='event-detail', lookup_field='slug')
+
 
 class EventListSerializer(ModelSerializer):
     image = VersatileImageFieldSerializer(sizes=[
         ('list', 'thumbnail__382x254'),
     ])
     url = event_detail_url
+
     class Meta:
         model = Event
         fields = ('url', 'title', 'slug', 'image', 'excerpt', 'updated_at',)
@@ -22,6 +25,8 @@ class EventDetailSerializer(ModelSerializer):
     image = VersatileImageFieldSerializer(sizes=[
         ('detail', 'thumbnail__1291x967'),
     ])
+
     class Meta:
         model = Event
-        fields = ('id', 'title', 'image', 'content', 'starts_at', 'ends_at', 'venue', 'phone', 'email', 'website', 'updated_at',)
+        fields = ('id', 'title', 'image', 'content', 'starts_at',
+                  'ends_at', 'venue', 'phone', 'email', 'website', 'updated_at',)

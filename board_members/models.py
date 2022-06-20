@@ -4,9 +4,11 @@ from django.db import models
 
 from versatileimagefield.fields import VersatileImageField, PPOIField
 
+
 class BoardMembers(models.Model):
     name = models.CharField(max_length=50)
-    image = VersatileImageField(upload_to='images/board_members/', null=True, blank=True, ppoi_field='ppoi')
+    image = VersatileImageField(
+        upload_to='images/board_members/', null=True, blank=True, ppoi_field='ppoi')
     ppoi = PPOIField()
     designation = models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)

@@ -2,6 +2,7 @@ from versatileimagefield.fields import VersatileImageField, PPOIField
 
 from django.db import models
 
+
 # Model that holds record for Transplant acts and legislations
 class Miscellaneous(models.Model):
     title = models.CharField(max_length=255)
@@ -14,6 +15,7 @@ class Miscellaneous(models.Model):
 
     class Meta:
         verbose_name_plural = 'Miscellaneous'
+
 
 class MiscellaneousImage(models.Model):
     image = VersatileImageField(upload_to='images/miscellaneous/', ppoi_field='ppoi')

@@ -5,6 +5,7 @@ from .models import MiscellaneousImage
 
 from versatileimagefield.image_warmer import VersatileImageFieldWarmer
 
+
 @receiver(models.signals.post_save, sender=MiscellaneousImage)
 def warm_Person_headshot_images(sender, instance, **kwargs):
     person_img_warmer = VersatileImageFieldWarmer(

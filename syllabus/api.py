@@ -4,6 +4,7 @@ from rest_framework.filters import SearchFilter
 from .models import Syllabus
 from .serializers import SyllabusDetailSerializer, SyllabusListSerializer
 
+
 class SyllabusViewSet(viewsets.ModelViewSet):
     queryset = Syllabus.objects.all()
     filter_backends = (SearchFilter,)

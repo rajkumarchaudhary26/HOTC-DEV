@@ -4,6 +4,7 @@ from lib.helpers import get_excerpt
 
 from ckeditor.fields import RichTextField
 
+
 class Syllabus(models.Model):
     title = models.CharField(max_length=255, db_index=True)
     slug = models.SlugField(max_length=255)
@@ -17,10 +18,11 @@ class Syllabus(models.Model):
         return self.title
 
     def save(self, *args, **kwargs):
-        self.slug = self.slug.lower().replace('  ', ' ').replace(' ', '-').replace('_', '-')
+        self.slug = self.slug.lower().replace(
+            '  ', ' ').replace(' ', '-').replace('_', '-')
         if not self.excerpt:
             self.excerpt = get_excerpt(self.content)
         super().save(*args, **kwargs)
-    
+
     class Meta:
         verbose_name_plural = 'Syllabuses'
