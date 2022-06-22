@@ -20,6 +20,9 @@ class Gallery(models.Model):
     class Meta:
         verbose_name_plural = 'Galleries'
 
+    def get_absolute_url(self):
+        return 'gallery/{}'.format(self.slug)
+
 
 class Image(models.Model):
     image = VersatileImageField(upload_to='images/gallery/', ppoi_field='ppoi')

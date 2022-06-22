@@ -19,3 +19,7 @@ class BoardMembers(models.Model):
 
     class Meta:
         verbose_name_plural = 'Board Members'
+
+    def get_absolute_url(self):
+        return 'board-member/{}'.format(self.name)
+    

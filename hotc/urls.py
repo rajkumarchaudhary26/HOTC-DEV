@@ -3,6 +3,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework.routers import DefaultRouter
+
 from home.api import HomeViewSet
 from news.api import NewsViewset
 from syllabus.api import SyllabusViewSet
@@ -17,21 +18,26 @@ from organization_structure.api import OrganizationStructureViewSet
 from contact.api import ContactViewSet
 from home.api import HomeViewSet
 from testimonial.api import TestimonialViewSet
+from menus.api import MenuViewSet
 
 router = DefaultRouter()
+
 router.register('news', NewsViewset, basename='news')
 router.register('syllabus', SyllabusViewSet, basename='syllabus')
 router.register('notice', NoticeViewSet, basename='notice')
 router.register('gallery', GalleryViewSet, basename='gallery')
 router.register('event', EventViewSet, basename='event')
-router.register('miscellaneous', MiscellaneousViewSet, basename='miscellaneous')
+router.register('miscellaneous', MiscellaneousViewSet,
+                basename='miscellaneous')
 router.register('download', DownloadViewSet, basename='download')
 router.register('about', AboutViewSet, basename='about')
 router.register('board-members', BoardMembersViewSet, basename='board-members')
-router.register('organization-structure', OrganizationStructureViewSet, basename='organization-structure')
+router.register('organization-structure',
+                OrganizationStructureViewSet, basename='organization-structure')
 router.register('contact', ContactViewSet, basename='contact')
 router.register('home', HomeViewSet, basename='home')
 router.register('testimonial', TestimonialViewSet, basename='testimonial')
+router.register('menus', MenuViewSet, basename='menus')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

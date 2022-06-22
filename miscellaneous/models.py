@@ -15,6 +15,10 @@ class Miscellaneous(models.Model):
 
     class Meta:
         verbose_name_plural = 'Miscellaneous'
+    
+    def get_absolute_url(self):
+        return 'miscellaneous/{}'.format(self.slug)
+    
 
 
 class MiscellaneousImage(models.Model):
