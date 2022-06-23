@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'adminsortable2',
 
     'general',
-    'home',
     'news',
     'syllabus',
     'notice',

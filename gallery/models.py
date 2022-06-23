@@ -2,7 +2,7 @@ from versatileimagefield.fields import VersatileImageField, PPOIField
 
 from django.db import models
 
-from home.models import Home
+from page.models import Home
 
 
 class Gallery(models.Model):

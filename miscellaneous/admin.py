@@ -17,9 +17,9 @@ class MiscellaneousAdmin(admin.ModelAdmin):
 
 @admin.register(Download)
 class DownloadAdmin(admin.ModelAdmin):
-    list_display = ('title', 'file', 'updated_at',)
-    date_hierarchy = 'updated_at'
-    list_filter = ('updated_at',)
+    list_display = ('title', 'file', 'uploaded_at',)
+    date_hierarchy = 'uploaded_at'
+    list_filter = ('uploaded_at',)
     list_per_page = 6
-    ordering = ('-updated_at',)
+    ordering = ('-uploaded_at',)
     search_fields = ('title',)

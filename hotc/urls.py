@@ -4,16 +4,14 @@ from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework.routers import DefaultRouter
 
-from home.api import HomeViewSet
 from news.api import NewsViewset
 from syllabus.api import SyllabusViewSet
 from notice.api import NoticeViewSet, LatestNotice
 from gallery.api import GalleryViewSet
 from event.api import EventViewSet
 from miscellaneous.api import MiscellaneousListViewSet, MiscellaneousDetailViewSet, DownloadViewSet
-from page.api import PageViewSet
+from page.api import PageViewSet, HomeViewSet
 from general.api import BoardMembersViewSet, OrganizationStructureViewSet, ContactViewSet, TestimonialViewSet
-from home.api import HomeViewSet
 from menu.api import MenuViewSet
 
 router = DefaultRouter()
