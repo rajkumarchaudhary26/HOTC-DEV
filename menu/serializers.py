@@ -11,6 +11,7 @@ class MenuItemSerializer(serializers.ModelSerializer):
 
 class MenuSerializer(serializers.ModelSerializer):
     menu_items = MenuItemSerializer(many=True)
+
     class Meta:
         model = Menu
         fields = ('name', 'menu_items')

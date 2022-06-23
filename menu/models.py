@@ -3,7 +3,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.utils.translation import gettext as _
 
-ENABLED_MODELS = ['about']
+ENABLED_MODELS = ['about', 'miscellaneous']
 
 
 class Menu(models.Model):
