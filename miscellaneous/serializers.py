@@ -1,4 +1,4 @@
-from .models import Miscellaneous, MiscellaneousImage
+from .models import Miscellaneous, MiscellaneousImage, Download
 from rest_framework.serializers import ModelSerializer, HyperlinkedIdentityField
 
 # Third-party packages
@@ -43,3 +43,9 @@ class MiscellaneousDetailSerializer(ModelSerializer):
     class Meta:
         model = Miscellaneous
         fields = ('title', 'images', 'updated_at',)
+
+
+class DownloadSerializer(ModelSerializer):
+    class Meta:
+        model = Download
+        fields = ('title', 'file',)

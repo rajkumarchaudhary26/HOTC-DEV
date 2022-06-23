@@ -15,13 +15,23 @@ class Miscellaneous(models.Model):
 
     class Meta:
         verbose_name_plural = 'Miscellaneous'
-    
+
     def get_absolute_url(self):
         return 'miscellaneous/{}'.format(self.slug)
-    
 
 
 class MiscellaneousImage(models.Model):
-    image = VersatileImageField(upload_to='images/miscellaneous/', ppoi_field='ppoi')
+    image = VersatileImageField(
+        upload_to='images/miscellaneous/', ppoi_field='ppoi')
     ppoi = PPOIField('Miscellaneous Images PPOI')
-    miscellaneous = models.ForeignKey(Miscellaneous, on_delete=models.CASCADE, related_name='images')
+    miscellaneous = models.ForeignKey(
+        Miscellaneous, on_delete=models.CASCADE, related_name='images')
+
+
+class Download(models.Model):
+    title = models.CharField(max_length=255)
+    file = models.FileField()
+    uploaded_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title

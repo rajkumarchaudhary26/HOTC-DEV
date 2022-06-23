@@ -10,8 +10,7 @@ from syllabus.api import SyllabusViewSet
 from notice.api import NoticeViewSet, LatestNotice
 from gallery.api import GalleryViewSet
 from event.api import EventViewSet
-from miscellaneous.api import MiscellaneousViewSet
-from download.api import DownloadViewSet
+from miscellaneous.api import MiscellaneousListViewSet, MiscellaneousDetailViewSet, DownloadViewSet
 from page.api import PageViewSet
 from general.api import BoardMembersViewSet, OrganizationStructureViewSet, ContactViewSet, TestimonialViewSet
 from home.api import HomeViewSet
@@ -24,8 +23,9 @@ router.register('syllabus', SyllabusViewSet, basename='syllabus')
 router.register('notice', NoticeViewSet, basename='notice')
 router.register('gallery', GalleryViewSet, basename='gallery')
 router.register('event', EventViewSet, basename='event')
-router.register('miscellaneous', MiscellaneousViewSet,
-                basename='miscellaneous')
+router.register('miscellaneous-list', MiscellaneousListViewSet,
+                basename='miscellaneous-list')
+router.register('miscellaneous-detail', MiscellaneousDetailViewSet, basename='miscellaneous-detail')
 router.register('download', DownloadViewSet, basename='download')
 router.register('about', PageViewSet, basename='about')
 router.register('board-members', BoardMembersViewSet, basename='board-members')

@@ -53,7 +53,6 @@ INSTALLED_APPS = [
     'gallery',
     'event',
     'miscellaneous',
-    'download',
     'page',
     'menu',
 ]
