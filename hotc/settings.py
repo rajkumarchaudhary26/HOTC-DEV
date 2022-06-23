@@ -60,7 +60,7 @@ INSTALLED_APPS = [
     'organization_structure',
     'contact',
     'testimonial',
-    'menus',
+    'menu',
 ]
 
 MIDDLEWARE = [

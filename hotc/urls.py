@@ -18,7 +18,7 @@ from organization_structure.api import OrganizationStructureViewSet
 from contact.api import ContactViewSet
 from home.api import HomeViewSet
 from testimonial.api import TestimonialViewSet
-from menus.api import MenuViewSet
+from menu.api import MenuViewSet
 
 router = DefaultRouter()
 
@@ -37,7 +37,7 @@ router.register('organization-structure',
 router.register('contact', ContactViewSet, basename='contact')
 router.register('home', HomeViewSet, basename='home')
 router.register('testimonial', TestimonialViewSet, basename='testimonial')
-router.register('menus', MenuViewSet, basename='menus')
+router.register('menu', MenuViewSet, basename='menu')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
