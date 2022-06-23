@@ -10,9 +10,12 @@ from notice.api import NoticeViewSet, LatestNotice
 from gallery.api import GalleryViewSet
 from event.api import EventViewSet
 from miscellaneous.api import MiscellaneousListViewSet, MiscellaneousDetailViewSet, DownloadViewSet
-from page.api import PageViewSet, HomeViewSet
-from general.api import BoardMembersViewSet, OrganizationStructureViewSet, ContactViewSet, TestimonialViewSet
+from page.api import PageViewSet
+from general.api import HomeViewSet
+from contact.api import ContactViewSet
+from testimonial.api import TestimonialViewSet
 from menu.api import MenuViewSet
+from team.api import BoardMemberViewSet, OrganizationStructureViewSet
 
 router = DefaultRouter()
 
@@ -26,7 +29,7 @@ router.register('miscellaneous-list', MiscellaneousListViewSet,
 router.register('miscellaneous-detail', MiscellaneousDetailViewSet, basename='miscellaneous-detail')
 router.register('download', DownloadViewSet, basename='download')
 router.register('about', PageViewSet, basename='about')
-router.register('board-members', BoardMembersViewSet, basename='board-members')
+router.register('board-member', BoardMemberViewSet, basename='board-members')
 router.register('organization-structure',
                 OrganizationStructureViewSet, basename='organization-structure')
 router.register('contact', ContactViewSet, basename='contact')
