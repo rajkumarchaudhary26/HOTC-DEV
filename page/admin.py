@@ -1,9 +1,9 @@
 from django.contrib import admin
 
-from .models import About
+from .models import Page
 
 
-@admin.register(About)
-class AboutAdmin(admin.ModelAdmin):
+@admin.register(Page)
+class PageAdmin(admin.ModelAdmin):
     list_display = ('title', 'created_at', 'updated_at',)
     prepopulated_fields = {'slug': ('title',)}

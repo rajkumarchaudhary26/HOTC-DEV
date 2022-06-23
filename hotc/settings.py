@@ -15,8 +15,6 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-from .custom_paginator import PageNumberPaginationWithCount
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -47,6 +45,7 @@ INSTALLED_APPS = [
     'versatileimagefield',
     'adminsortable2',
 
+    'general',
     'home',
     'news',
     'syllabus',
@@ -55,11 +54,7 @@ INSTALLED_APPS = [
     'event',
     'miscellaneous',
     'download',
-    'about',
-    'board_members',
-    'organization_structure',
-    'contact',
-    'testimonial',
+    'page',
     'menu',
 ]
 
@@ -171,6 +166,6 @@ VERSATILEIMAGEFIELD_RENDITION_KEY_SETS = {
 }
 
 REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPaginationWithCount',
+    'DEFAULT_PAGINATION_CLASS': 'hotc.custom_paginator.PageNumberPaginationWithCount',
     'PAGE_SIZE': 6
 }

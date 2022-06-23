@@ -12,12 +12,9 @@ from gallery.api import GalleryViewSet
 from event.api import EventViewSet
 from miscellaneous.api import MiscellaneousViewSet
 from download.api import DownloadViewSet
-from about.api import AboutViewSet
-from board_members.api import BoardMembersViewSet
-from organization_structure.api import OrganizationStructureViewSet
-from contact.api import ContactViewSet
+from page.api import PageViewSet
+from general.api import BoardMembersViewSet, OrganizationStructureViewSet, ContactViewSet, TestimonialViewSet
 from home.api import HomeViewSet
-from testimonial.api import TestimonialViewSet
 from menu.api import MenuViewSet
 
 router = DefaultRouter()
@@ -30,7 +27,7 @@ router.register('event', EventViewSet, basename='event')
 router.register('miscellaneous', MiscellaneousViewSet,
                 basename='miscellaneous')
 router.register('download', DownloadViewSet, basename='download')
-router.register('about', AboutViewSet, basename='about')
+router.register('about', PageViewSet, basename='about')
 router.register('board-members', BoardMembersViewSet, basename='board-members')
 router.register('organization-structure',
                 OrganizationStructureViewSet, basename='organization-structure')

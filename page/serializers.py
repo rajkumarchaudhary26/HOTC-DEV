@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import About
+from .models import Page
 
 # Third-party packages
 from versatileimagefield.serializers import VersatileImageFieldSerializer
@@ -12,5 +12,5 @@ class AboutSerializer(serializers.ModelSerializer):
     ])
 
     class Meta:
-        model = About
+        model = Page
         fields = ('id', 'title', 'image', 'created_at', 'updated_at',)

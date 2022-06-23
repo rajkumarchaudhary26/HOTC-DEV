@@ -1,9 +1,9 @@
 from django.apps import AppConfig
 
 
-class TestimonialConfig(AppConfig):
+class PageConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'testimonial'
+    name = 'page'
 
     def ready(self):
-        import testimonial.signals
+        import page.signals
